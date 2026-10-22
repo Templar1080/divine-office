@@ -1,0 +1,22 @@
+Divine Office Reminder - build requirements
+===========================================
+OS:            Windows 10/11 (CMD)
+Disk:          about 3 GB free
+Internet:      needed for setup and for the first build (Gradle, Google Maven)
+
+Installed automatically by setup.bat:
+  - JDK 17 (Eclipse Temurin, via winget)
+  - Android command-line tools (to C:\Android)
+  - platform-tools, platforms;android-34, build-tools;34.0.0
+  - ANDROID_HOME=C:\Android (user environment variable)
+
+Downloaded automatically on first build:
+  - Gradle 8.7 (services.gradle.org)
+  - Android Gradle Plugin 8.5.2, Kotlin 1.9.24 (Google Maven / Maven Central)
+
+Steps:
+  1. setup.bat      (if it asks you to reopen CMD, do so and run it again)
+  2. build.bat      -> produces DivineOffice.apk
+  3. adb install -r DivineOffice.apk   (phone with USB debugging), or copy the APK to the phone
+
+Note: if downloads fail, a VPN or mirror may be required.
