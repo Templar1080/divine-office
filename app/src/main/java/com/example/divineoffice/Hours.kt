@@ -21,7 +21,7 @@ val HOURS = listOf(
 fun prefs(c: Context) = c.getSharedPreferences("office", Context.MODE_PRIVATE)
 fun isOn(c: Context, x: Hour) = prefs(c).getBoolean("en${x.id}", true)
 fun hourOf(c: Context, x: Hour) = prefs(c).getInt("h${x.id}", x.h)
-fun minOf(c: Context, x: Hour) = prefs(c).getInt("m${x.id}", x.m)
+fun minuteOf(c: Context, x: Hour) = prefs(c).getInt("m${x.id}", x.m)
 
 object Scheduler {
     fun schedule(c: Context, x: Hour) {
@@ -32,7 +32,7 @@ object Scheduler {
         am.cancel(pi)
         if (!isOn(c, x)) return
         val t = Calendar.getInstance().apply {
-            set(Calendar.HOUR_OF_DAY, hourOf(c, x)); set(Calendar.MINUTE, minOf(c, x))
+            set(Calendar.HOUR_OF_DAY, hourOf(c, x)); set(Calendar.MINUTE, minuteOf(c, x))
             set(Calendar.SECOND, 0); set(Calendar.MILLISECOND, 0)
             if (timeInMillis <= System.currentTimeMillis()) add(Calendar.DAY_OF_YEAR, 1)
         }.timeInMillis

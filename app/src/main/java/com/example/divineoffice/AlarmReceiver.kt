@@ -14,7 +14,7 @@ class AlarmReceiver : BroadcastReceiver() {
             Intent(Intent.ACTION_VIEW, Uri.parse("https://www.divinumofficium.com/cgi-bin/horas/officium.pl")),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
         nm.notify(x.id, Notification.Builder(c, "office")
-            .setSmallIcon(android.R.drawable.ic_lock_idle_alarm)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle("Time for ${x.name}")
             .setContentText(x.latin)
             .setContentIntent(tap).setAutoCancel(true).build())
