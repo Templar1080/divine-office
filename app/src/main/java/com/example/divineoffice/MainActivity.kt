@@ -20,7 +20,8 @@ private val DGOLD = Color.parseColor("#8A6D1A")
 private val PARCHMENT = Color.parseColor("#F6EFE0")
 private val INK = Color.parseColor("#2B2118")
 private val NOTES = listOf(
-    "Night vigil, and the dawn of the Resurrection",
+    "The night vigil, watching for the Lord",
+    "Dawn praise, the light of the Resurrection",
     "The first hour, at sunrise",
     "The Holy Spirit descends, 9 a.m.",
     "Christ is crucified, noon",

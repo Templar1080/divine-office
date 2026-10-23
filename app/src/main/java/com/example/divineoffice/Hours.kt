@@ -9,16 +9,17 @@ import java.util.Calendar
 data class Hour(val id: Int, val name: String, val latin: String, val h: Int, val m: Int)
 
 val HOURS = listOf(
-    Hour(0, "Matins & Lauds", "Matutinum et Laudes", 5, 30),
-    Hour(1, "Prime", "Prima", 6, 30),
-    Hour(2, "Terce", "Tertia", 9, 0),
-    Hour(3, "Sext", "Sexta", 12, 0),
-    Hour(4, "None", "Nona", 15, 0),
-    Hour(5, "Vespers", "Vesperae", 18, 0),
-    Hour(6, "Compline", "Completorium", 21, 30)
+    Hour(0, "Matins", "Matutinum", 0, 0),
+    Hour(1, "Lauds", "Laudes", 5, 0),
+    Hour(2, "Prime", "Prima", 6, 30),
+    Hour(3, "Terce", "Tertia", 9, 0),
+    Hour(4, "Sext", "Sexta", 12, 0),
+    Hour(5, "None", "Nona", 15, 0),
+    Hour(6, "Vespers", "Vesperae", 18, 0),
+    Hour(7, "Compline", "Completorium", 21, 30)
 )
 
-fun prefs(c: Context) = c.getSharedPreferences("office", Context.MODE_PRIVATE)
+fun prefs(c: Context) = c.getSharedPreferences("office2", Context.MODE_PRIVATE)
 fun isOn(c: Context, x: Hour) = prefs(c).getBoolean("en${x.id}", true)
 fun hourOf(c: Context, x: Hour) = prefs(c).getInt("h${x.id}", x.h)
 fun minuteOf(c: Context, x: Hour) = prefs(c).getInt("m${x.id}", x.m)
